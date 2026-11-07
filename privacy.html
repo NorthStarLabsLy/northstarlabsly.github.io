@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the private RED CENT Backup utility uses Google Drive access and handles encrypted backups, credentials and retention.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Privacy Policy | RED CENT Backup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><a class="wordmark" href="index.html"><span class="brand-mark" aria-hidden="true">RC</span><span>RED CENT <span class="brand-subtitle">Backup</span></span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms</a></nav></header>
+  <main id="main">
+  <p class="eyebrow">How the utility handles information</p>
+  <h1>Privacy Policy</h1>
+  <p class="lead">This policy describes the owner-operated RED CENT Backup utility and this information website. It does not describe the wider RED CENT application.</p>
+  <p class="document-date">Last updated: 7 November 2026</p>
+  <section aria-labelledby="drive"><h2 id="drive">Google Drive access and purpose</h2>
+    <p>The utility uses the owner's Google account to store and retrieve private encrypted backup archives in a designated Drive destination. The configured permission is <code>drive.file</code>, which limits access to specific files created by or made accessible to the app. It does not request full-Drive access.</p>
+    <p>The permission supports creating, reading, modifying and deleting app-accessible files. A configured destination identifies where the utility operates; it is not a separate OAuth permission boundary.</p>
+  </section>
+  <section aria-labelledby="handling"><h2 id="handling">Backup contents and encryption</h2>
+    <p>Backup archives contain RED CENT's collected data and supporting history, evidence, manifests and operational state. rclone encrypts archive contents, filenames and directory names before uploading them to Google Drive.</p>
+    <p>Encryption does not hide all metadata, such as stored object sizes or transfer activity. The computer or worker processing a backup can access the local archive and the secrets available to that process. Encryption is not a guarantee against compromise or loss.</p>
+    <p>OAuth credentials and crypt recovery secrets are kept separately from the data archives. The rclone configuration is password-encrypted. This website does not receive those credentials, recovery secrets or archive contents.</p>
+  </section>
+  <section aria-labelledby="providers"><h2 id="providers">Transfers and service providers</h2>
+    <p>The configured archive destination is the owner's Google Drive. Google processes account, storage and request information as the Drive provider under its own policies.</p>
+    <p>The prepared worker design uses Render to run the backup process and Healthchecks for backup-status monitoring. A deployed worker would process local archive data and credentials on its host, upload encrypted archives to Drive, and send monitoring status metadata, including archive identifiers and verification timestamps. This description does not assert that the worker or monitoring is deployed.</p>
+    <p>The backup workflow does not publish archives through this information site or offer public access to the owner's Drive destination.</p>
+  </section>
+  <section aria-labelledby="retention"><h2 id="retention">Retention and deletion</h2>
+    <p>The prepared trial policy retains a baseline plus up to seven verified daily backup copies in Drive. Remote snapshots are not automatically deleted by the backup retention workflow, so this is not a promise that information is erased after seven days.</p>
+    <p>Local cleanup applies to generated backup archives under the worker's verification and storage-capacity rules. It does not establish a fixed retention period for the source data or all local copies.</p>
+    <p>The owner controls removal of remote archives and separately retained recovery material. Removing an archive from one location does not remove copies elsewhere or change Google's storage and deletion practices.</p>
+  </section>
+  <section aria-labelledby="control"><h2 id="control">Account control and recovery</h2>
+    <p>The owner can revoke the utility's access through the backup Google account's third-party access controls. Revocation prevents future authorised access; it does not itself delete existing backup files.</p>
+    <p>Recovery depends on retaining access to the backup account, the encrypted configuration and the separate unlocking and crypt recovery secrets. Google access tokens and refresh tokens may expire or be revoked.</p>
+  </section>
+  <section aria-labelledby="website"><h2 id="website">This website</h2>
+    <p>These pages contain no JavaScript, analytics, advertising, forms, cookies or tracking code. They load no third-party fonts or libraries.</p>
+    <p>If published on GitHub Pages, the hosting provider may process request information independently of these pages. GitHub states that it logs visitors' IP addresses for security. This site does not claim that hosting produces no logs.</p>
+    <p>Provider information: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+  </section>
+  <section aria-labelledby="contact"><h2 id="contact">Contact and updates</h2>
+    <p>Contact: <a href="mailto:redcent.contact@gmail.com">redcent.contact@gmail.com</a>.</p>
+    <p>The operator should review this policy whenever the utility's access, providers, retention or sharing practices change.</p>
+  </section>
+  </main>
+  <footer class="site-footer"><p>RED CENT Backup · Owner-operated private utility</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms</a></nav><p class="footer-note">Information pages only. No sign-in or uploads.</p></footer>
+</body>
+</html>
